@@ -1,0 +1,30 @@
+.nav {
+  background-color: var(--background-color-light);
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 .5rem;
+}
+
+.page-head{
+	position: relative;
+  cursor: pointer;
+
+	h1{
+		color: red;
+		text-align: center;
+		text-transform: uppercase;
+		padding: 20px;
+	}
+}
+
+.link-list {
+  display: flex;
+  margin: 0;
+  list-style: none;
+}
+
+.link {
+  padding: .5rem;
+}

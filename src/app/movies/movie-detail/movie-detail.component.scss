@@ -1,0 +1,57 @@
+.movie-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .nav {
+    grid-area: nav;
+    background-color: #069;
+    color: white;
+    border-top: 1px solid #024;
+    padding: 0.5rem;
+  }
+
+  .movie-details-header,
+  .movie-details-body,
+  .movie-details-footer {
+    padding: 20px;
+  }
+
+  .movie-title {
+    font-size: 2em;
+    color: #333;
+  }
+
+  .movie-rating {
+    color: #777;
+    font-weight: bold;
+  }
+
+  .movie-poster {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .movie-description {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
+  .movie-extra-info,
+  .movie-awards {
+    font-size: 0.9em;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    .movie-title {
+      font-size: 1.5em;
+    }
+
+    .movie-poster img {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<!-- <a [routerLink]="['/movie','details']"
+[queryParams]="{movieId: 'tt3896198'}"
+>Some Movie</a> -->
+<div class="movies-container">
+
+
+
+  <body>
+    <!-- TODO: add header -->
+    <!-- TODO: add nav -->
+    <app-navbar></app-navbar>
+    <section class="movies-grid">
+      <h1 class="title">Unlimited movies, TV shows, and more</h1>
+      <p class="description">Watch anywhere. Cancel anytime.</p>
+
+
+      <div class="cards-center hover01">
+      <article *ngFor="let movie of movies" class="movie-thumbnail ">
+
+          <a [routerLink]="['/movie/details', movie.id]">
+            <img [src]='getMovieSrc(movie.id)' [alt]="movie.title" class="movie-image " />
+            <h1 class="movie-title">{{ movie.title }}</h1>
+          </a>
+        </article>
+      </div>
+    </section>
+  </body>
+  Footer
+</div>

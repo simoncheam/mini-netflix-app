@@ -1,0 +1,29 @@
+.not-found-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.error-code {
+  font-size: 72px;
+  color: #e94e77;
+}
+
+.error-message {
+  font-size: 24px;
+  color: #333;
+}
+
+.error-description {
+  font-size: 16px;
+  color: #666;
+}
+
+.back-button {
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

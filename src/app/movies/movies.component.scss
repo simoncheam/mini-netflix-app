@@ -1,0 +1,84 @@
+// TODO - add movie card class
+
+body {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  // min-height: 100vh;
+  margin: 0;
+}
+
+.movies-container {
+  padding: 0;
+  background: var(--background-color-light);
+  min-height: 100vh;
+}
+
+.movies-grid {
+  min-width: 100%;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+}
+.description {
+  text-align: center;
+}
+
+.cards-center {
+  width: 70vw; //*✅ OK- card will always be 80% of the viewport width
+  max-width: 1170px; //✅ OK
+  margin: 2rem auto; //✅ OK
+  // add grid for responsive cards
+  display: grid; //✅ OK
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); //✅ OK
+  grid-column-gap: 2rem; //✅ OK
+}
+
+.movie-thumbnail {
+  display: grid; //✅ OK
+  grid-template-columns: 1fr; //✅ OK
+
+  box-sizing: border-box;
+  border: 1px solid var(--darkGrey);
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+
+  &:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .movie-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .movie-title {
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+.hover01 article:hover {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-transform: scale(1.3);
+  transform: scale(1.1);
+  background-color: var(--background-color-dark);
+
+  h1 {
+    color: var(--text-color-light);
+  }
+}

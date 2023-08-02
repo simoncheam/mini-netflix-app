@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+// Bebas Neue
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+:root {
+  --darkGrey: #afafaf;
+  --background-color-light: #ffffff;
+  --text-color: #121212;
+
+  --background-color-dark: #121212; // ! final color
+  --text-color-light: #ffffff; //! final color
+}
+body {
+  font-family: "Bebas Neue", sans-serif;
+  // background-color: var(--background-color);
+  display: contents;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  color: var(--text-color);
+}
+
+.netflix-btn {
+  background-color: rgb(229, 9, 20);
+  color: var(--text-color-light);
+  border: none;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.netflix-btn:hover {
+  background-color: rgb(200, 9, 20);
+}

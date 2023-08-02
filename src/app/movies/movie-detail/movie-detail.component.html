@@ -1,0 +1,56 @@
+<!-- TODO: */
+  `On the movie details page,
+  the user should see a poster,
+  title,
+  description,
+  and rating for the movie.`
+  */ -->
+  <!-- <head>Outside of body
+      <button class="netflix-btn" aria-label="Go back" (click)="goBack()">
+        <span class="back-arrow">&#8592;</span> Back
+      </button>
+
+  </head> -->
+
+<h2 *ngIf="!loadedMovie">movieId not found</h2>
+<body class="movie-details-container" *ngIf="loadedMovie">
+  <!-- TODO: add nav -->
+  <app-navbar></app-navbar>
+
+
+
+  <!-- TODO: Add Header -->
+  <header class="movie-details-header">
+    <button class="netflix-btn" aria-label="Go back" (click)="goBack()">
+      Go Back
+    </button>
+  </header>
+  <!-- TODO: Add Header -->
+
+
+  <!-- *** POSTER -->
+  <figure class="movie-poster">
+    <img src="{{ loadedMovie.Poster }}"
+    alt="{{ loadedMovie.Title }} Poster" />
+  </figure>
+
+  <!-- *** TITLE -->
+  <section class="movie-details-header">
+    <h1 class="movie-title" aria-label="Movie Title">
+      {{ loadedMovie.Title }}
+    </h1>
+  </section>
+
+  <!-- *** DESCRIPTION -->
+  <section class="movie-details-body">
+    <h2 class="section-title">Description</h2>
+    <p class="movie-description" aria-label="Movie Description">
+      {{ loadedMovie.Plot }}
+    </p>
+    <p class="movie-rating" aria-label="Movie Rating">
+      Rating: {{ loadedMovie.imdbRating }}/10
+    </p>
+  </section>
+
+
+</body>
