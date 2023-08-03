@@ -1,7 +1,6 @@
 // TODO - add movie card class
 
 body {
-  // display: flex;
   justify-content: center;
   align-items: center;
   // min-height: 100vh;
@@ -12,6 +11,7 @@ body {
   padding: 0;
   background: var(--background-color-light);
   min-height: 100vh;
+  // min-width: 100vw; //? testing
 }
 
 .movies-grid {
@@ -28,13 +28,13 @@ body {
 }
 
 .cards-center {
-  width: 70vw; //*✅ OK- card will always be 80% of the viewport width
-  max-width: 1170px; //✅ OK
-  margin: 2rem auto; //✅ OK
+  width: 70vw;
+  max-width: 1170px;
+  margin: 2rem auto;
   // add grid for responsive cards
-  display: grid; //✅ OK
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); //✅ OK
-  grid-column-gap: 2rem; //✅ OK
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-column-gap: 2rem;
 }
 
 .movie-thumbnail {
@@ -51,7 +51,6 @@ body {
   }
 
   a {
-    text-decoration: none;
     color: inherit;
     display: block;
   }
@@ -76,9 +75,9 @@ body {
   transition: 0.3s ease-in-out;
   -webkit-transform: scale(1.3);
   transform: scale(1.1);
-  background-color: var(--background-color-dark);
+  background-color: var(--background-color-lighter);
 
   h1 {
-    color: var(--text-color-light);
+    color: #ffffff;
   }
 }

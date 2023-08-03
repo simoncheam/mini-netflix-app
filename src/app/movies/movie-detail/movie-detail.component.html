@@ -1,56 +1,43 @@
-<!-- TODO: */
-  `On the movie details page,
-  the user should see a poster,
-  title,
-  description,
-  and rating for the movie.`
-  */ -->
-  <!-- <head>Outside of body
-      <button class="netflix-btn" aria-label="Go back" (click)="goBack()">
-        <span class="back-arrow">&#8592;</span> Back
-      </button>
+<div class="movie-details-container">
 
-  </head> -->
+  <body *ngIf="loadedMovie">
+    <app-navbar></app-navbar>
+    <main>
+      <section class="movies-grid">
+        <div class="section-center">
+          <!-- poster -->
+          <article class="movie-img">
+            <div class="movie-picture-container">
+              <img src="{{ loadedMovie.Poster }}" alt="{{ loadedMovie.Title }}" class="movie-picture" />
+            </div>
+          </article>
+          <!-- about info -->
+          <article class="movie-info">
+            <!-- title -->
+            <div class="section-title">
+              <h3>{{ loadedMovie.Title }}</h3>
+            </div>
+            <!-- description -->
+            <p class="about-text">
+              {{ loadedMovie.Plot }}
+            </p>
+            <!-- rating -->
+            <p class="movie-rating" aria-label="Movie Rating">
+              Rating: {{ loadedMovie.imdbRating }}/10
+            </p>
+            <!-- button div -->
+            <div class="btn-container">
+              <a href="https://www.netflix.com/" class="netflix-btn" aria-label="Join Now" target="_blank">
+                Join Now
+              </a>
+              <button class="secondary-btn" aria-label="Sign In" aria-label="Go back" (click)="goBack()">
+                Go Back
+              </button>
 
-<h2 *ngIf="!loadedMovie">movieId not found</h2>
-<body class="movie-details-container" *ngIf="loadedMovie">
-  <!-- TODO: add nav -->
-  <app-navbar></app-navbar>
-
-
-
-  <!-- TODO: Add Header -->
-  <header class="movie-details-header">
-    <button class="netflix-btn" aria-label="Go back" (click)="goBack()">
-      Go Back
-    </button>
-  </header>
-  <!-- TODO: Add Header -->
-
-
-  <!-- *** POSTER -->
-  <figure class="movie-poster">
-    <img src="{{ loadedMovie.Poster }}"
-    alt="{{ loadedMovie.Title }} Poster" />
-  </figure>
-
-  <!-- *** TITLE -->
-  <section class="movie-details-header">
-    <h1 class="movie-title" aria-label="Movie Title">
-      {{ loadedMovie.Title }}
-    </h1>
-  </section>
-
-  <!-- *** DESCRIPTION -->
-  <section class="movie-details-body">
-    <h2 class="section-title">Description</h2>
-    <p class="movie-description" aria-label="Movie Description">
-      {{ loadedMovie.Plot }}
-    </p>
-    <p class="movie-rating" aria-label="Movie Rating">
-      Rating: {{ loadedMovie.imdbRating }}/10
-    </p>
-  </section>
-
-
-</body>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</div>

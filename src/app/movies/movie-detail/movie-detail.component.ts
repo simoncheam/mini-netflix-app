@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { Movie } from 'src/app/models/movie';
 import { MoviesService } from 'src/app/services/movies.service';
@@ -16,7 +17,7 @@ export class MovieDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    // private navCtrl: NavController, //? can I use this?
+    private navCtrl: NavController,
     private movieService: MoviesService,
     private router: Router
   ) {}
@@ -64,7 +65,8 @@ export class MovieDetailComponent implements OnInit {
       .catch((error) => {
         console.error('An error occurred while fetching the movie:', error);
         // Handle the error with redirect
-        this.router.navigate(['/404']);
+        // this.navCtrl.navigateBack('/'); // using ionic nav controller
+        this.goBack()
       });
   }
 
@@ -73,9 +75,12 @@ export class MovieDetailComponent implements OnInit {
 
 
   goBack() {
-    this.router.navigate(['/movie'], {
-      relativeTo: this.route,
-      queryParamsHandling: 'preserve',
-    });
+    this.navCtrl.navigateBack('/'); // using ionic nav controller
+    // this.router.navigate(['/movie'], {
+    //   relativeTo: this.route,
+    //   queryParamsHandling: 'preserve',
+    // });
   }
+
+
 }

@@ -1,12 +1,26 @@
-<nav class="nav">
-  <span class="page-head">
-  <h1 (click)="goBack()">
-    Mini Nextflix
-  </h1>
+<nav class="navbar">
+  <span class="brand-title">
+    <h1 (click)="goBack()">
+      Mini Nextflix
+    </h1>
   </span>
-  <ul class="link-list">
-    <button class="netflix-btn" aria-label="Sign In">
-       Sign In
-    </button>
-  </ul>
+  <a  class="toggle-button" #toggleButton (click)="handleToggleActive()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </a>
+  <div  class="navbar-links" [class.active]="isNavbarActive">
+    <ul>
+      <button class="netflix-btn" aria-label="Sign In">
+        Join Now
+      </button>
+      <button class="secondary-btn" aria-label="Sign In">
+        Sign In
+      </button>
+      <!-- <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li> -->
+    </ul>
+  </div >
+
 </nav>
