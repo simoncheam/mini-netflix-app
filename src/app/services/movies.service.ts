@@ -21,7 +21,7 @@ export class MoviesService {
   ];
 
 
-  private baseUrl = 'http://www.omdbapi.com/';
+  private baseUrl = 'https://www.omdbapi.com/';
 
   constructor(private readonly http: HttpClient) {}
 
