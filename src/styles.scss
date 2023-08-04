@@ -109,6 +109,9 @@ p {
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  font-family: Arial;
+  font-weight: 400;
 }
 
 /* Lighter background color on hover */
@@ -117,30 +120,21 @@ p {
 }
 
 
-
 .section-center {
   width: 85vw;
   max-width: 720px;
   margin: 2rem auto;
-
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-column-gap: 2rem;
-
 }
-
 
 
 // medium
 @media screen and (min-width: 768px) {
-
   .movie-img,.movie-info{
   padding: 2rem 0;
   }
 }
 
-// large
-@media screen and (min-width: 1024px) {
 
-}

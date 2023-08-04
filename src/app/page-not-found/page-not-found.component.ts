@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class PageNotFoundComponent {
 
+  constructor(
+    private navCtrl: NavController,
+  ) {}
+
+  goBack() {
+    this.navCtrl.navigateBack('/'); // using ionic nav controller
+  }
 }

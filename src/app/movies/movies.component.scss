@@ -1,9 +1,7 @@
-// TODO - add movie card class
 
 body {
   justify-content: center;
   align-items: center;
-  // min-height: 100vh;
   margin: 0;
 }
 
@@ -39,8 +37,8 @@ body {
 }
 
 .movie-thumbnail {
-  display: grid; //✅ OK
-  grid-template-columns: 1fr; //✅ OK
+  display: grid;
+  grid-template-columns: 1fr;
 
   box-sizing: border-box;
   border: 1px solid var(--darkGrey);

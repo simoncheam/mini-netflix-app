@@ -27,7 +27,6 @@ export class MovieDetailComponent implements OnInit {
     this.route.paramMap.subscribe(async (paramMap) => {
       if (!paramMap.has('movieId')) {
         const id = this.route.snapshot.queryParams;
-        console.log(id);
 
         //load movie from url query params
         await this.loadMovieByID(id.movieId);
@@ -38,23 +37,16 @@ export class MovieDetailComponent implements OnInit {
       //! get the movieId from url parameter
       this.movieId = paramMap.get('movieId');
 
-
       this.loadMovieByID(this.movieId);
-
     });
-
   }
 
   private async loadMovieByID(movieId: string) {
-    console.log('inside loadMovieByID!!!');
-    this.movieResult =  this.movieService.getMovieById(movieId);
+    this.movieResult = this.movieService.getMovieById(movieId);
     this.movieResult
       .then((movie) => {
-        console.log(movie);
-
         // ! check if response is false
         if (movie.Response === 'False') {
-          console.log('movieId not found');
           // * redirect to not found page
           this.router.navigate(['/404']);
           return;
@@ -65,22 +57,11 @@ export class MovieDetailComponent implements OnInit {
       .catch((error) => {
         console.error('An error occurred while fetching the movie:', error);
         // Handle the error with redirect
-        // this.navCtrl.navigateBack('/'); // using ionic nav controller
-        this.goBack()
+        this.router.navigate(['/404']);
       });
   }
 
-  // TODO: add query param to url
-
-
-
   goBack() {
     this.navCtrl.navigateBack('/'); // using ionic nav controller
-    // this.router.navigate(['/movie'], {
-    //   relativeTo: this.route,
-    //   queryParamsHandling: 'preserve',
-    // });
   }
-
-
 }

@@ -11,7 +11,6 @@ import { Movie, MovieIndex } from '../models/movie';
 export class MoviesComponent implements OnInit {
   public movies: MovieIndex[] = [];
 
-  // basePosterUrl = 'http://img.omdbapi.com/?i=tt3896198&h=600&apikey=67ea6085';
   public basePosterUrl = 'http://img.omdbapi.com/?i=';
   private api_key = '67ea6085';
 
@@ -19,11 +18,8 @@ export class MoviesComponent implements OnInit {
     private movieService: MoviesService,
   ) {}
 
-  // TODO: get all movies
-
   private async getAllMovies() {
     this.movies = await this.movieService.movies;
-    console.log(this.movies);
   }
 
   getMovieSrc(movieId: string): string {

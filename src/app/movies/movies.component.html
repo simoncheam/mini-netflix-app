@@ -1,12 +1,6 @@
 
 <div class="movies-container">
-
-
-
   <body>
-    <!-- TODO: add header -->
-    <!-- TODO: add nav -->
-    <!-- <app-navbar></app-navbar> -->
     <section class="movies-grid">
       <h2 class="title">Unlimited movies, TV shows, and more</h2>
       <p class="description">Watch anywhere. Cancel anytime.</p>
@@ -14,7 +8,6 @@
 
       <div class="cards-center hover01">
       <article *ngFor="let movie of movies" class="movie-thumbnail ">
-
           <a [routerLink]="['/movie/details', movie.id]">
             <img [src]='getMovieSrc(movie.id)' [alt]="movie.title" class="movie-image " />
             <h3 class="movie-title">{{ movie.title }}</h3>
