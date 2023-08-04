@@ -37,7 +37,7 @@ export class MovieDetailComponent implements OnInit {
       //! get the movieId from url parameter
       this.movieId = paramMap.get('movieId');
 
-      this.loadMovieByID(this.movieId);
+      await this.loadMovieByID(this.movieId);
     });
   }
 
