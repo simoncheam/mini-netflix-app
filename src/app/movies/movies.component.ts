@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 export class MoviesComponent implements OnInit {
   public movies: MovieIndex[] = [];
 
-  public basePosterUrl = 'http://img.omdbapi.com/?i=';
+  public basePosterUrl = 'http://img.omdbapi.com?i=';
 
   constructor(
     private movieService: MoviesService,
