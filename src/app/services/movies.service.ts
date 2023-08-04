@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Movie, MovieIndex } from '../models/movie';
 import { take } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +20,6 @@ export class MoviesService {
     { id: 'tt3896198', title: 'Guardians of the Galaxy Vol. 2' },
   ];
 
-  private api_key = '67ea6085';
 
   private baseUrl = 'http://www.omdbapi.com/';
 
@@ -32,7 +32,7 @@ export class MoviesService {
   public async getMovieById(id: string): Promise<Movie> {
     try {
       return await this.http
-        .get<Movie>(`${this.baseUrl}?i=${id}&apikey=${this.api_key}`)
+        .get<Movie>(`${this.baseUrl}?i=${id}&apikey=${environment.movieAPIKey}`)
         .pipe(take(1))
         .toPromise();
     } catch (error) {
@@ -41,4 +41,8 @@ export class MoviesService {
       throw error;
     }
   }
+
+
+
+
 }
